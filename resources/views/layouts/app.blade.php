@@ -63,7 +63,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                @if(Auth::user()->role==='administrator')
+                                @if(Auth::user()->role->name==='administrator')
                                     <li><a href="{{ url('admin/posts') }}"> Visit Posts </a></li>
                                     <li><a href="{{ url('admin/users') }}"> Visit Users </a></li>
                                     <li><a href="{{ url('admin/comments') }}"> Visit Comments </a></li>
