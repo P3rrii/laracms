@@ -70,7 +70,16 @@
                                     <li><a href="{{ url('/admin/comment/replies') }}">Visit All Replies</a></li>
                                     <li><a href="{{ url('admin/categories') }}"> Visit Categories </a> </li>
                                     <li><a href="{{ url('/admin/media') }}">Visit Media</a></li>
+                                
+                                @elseif(Auth::user()->role->name==="author")
+                                    <li><a href="{{ url('admin/posts') }}"> Visit Posts </a></li>
+                                    <li><a href="{{ url('admin/comments') }}"> Visit Comments </a></li>
+                                    <li><a href="{{ url('/admin/comment/replies') }}">Visit All Replies</a></li>
+                                    <li><a href="{{ url('admin/categories') }}"> Visit Categories </a> </li>
+                                    <li><a href="{{ url('/admin/media') }}">Visit Media</a></li>
                                 @endif
+
+                                
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                     @endif
