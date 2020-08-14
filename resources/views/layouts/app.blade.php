@@ -63,12 +63,14 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{url('admin/posts')}}"> Visit Posts </a></li>
-                                <li><a href="{{url('admin/users')}}"> Visit Users </a></li>
-                                <li><a href="{{url('admin/comments')}}"> Visit Comments </a></li>
-                                <li><a href="{{ url('/admin/comment/replies') }}">Visit All Replies</a></li>
-                                <li><a href="{{url('admin/categories')}}"> Visit Categories </a> </li>
-                                <li><a href="{{ url('/admin/media') }}">Visit Media</a></li>
+                                @if(Auth::user()->role==='administrator')
+                                    <li><a href="{{ url('admin/posts') }}"> Visit Posts </a></li>
+                                    <li><a href="{{ url('admin/users') }}"> Visit Users </a></li>
+                                    <li><a href="{{ url('admin/comments') }}"> Visit Comments </a></li>
+                                    <li><a href="{{ url('/admin/comment/replies') }}">Visit All Replies</a></li>
+                                    <li><a href="{{ url('admin/categories') }}"> Visit Categories </a> </li>
+                                    <li><a href="{{ url('/admin/media') }}">Visit Media</a></li>
+                                @endif
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                     @endif
